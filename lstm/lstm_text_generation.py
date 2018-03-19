@@ -20,18 +20,30 @@ import sys
 import io
 
 path = get_file('nietzsche.txt', origin='https://s3.amazonaws.com/text-datasets/nietzsche.txt')
-with io.open(path, encoding='utf-8') as f:
-    text = f.read().lower()
+# path1 = 'got1.txt'
+path2 = 'got2.txt'
+with io.open(path, encoding='utf-8') as f1, open(path2, encoding='utf-8') as f2:
+    text = f1.read().lower()
+    # text += f2.read().lower()
 print('corpus length:', len(text))
+
+output_file = open('output_file.txt','w')
 
 chars = sorted(list(set(text)))
 print('total chars:', len(chars))
+
 char_indices = dict((c, i) for i, c in enumerate(chars))
 indices_char = dict((i, c) for i, c in enumerate(chars))
 
 # cut the text in semi-redundant sequences of maxlen characters
+
+#hyperparameters
 maxlen = 40
 step = 3
+diversity_range = [0.2, 0.6, 1.0, 1.2]
+verbose = 0
+
+
 sentences = []
 next_chars = []
 for i in range(0, len(text) - maxlen, step):
@@ -71,18 +83,18 @@ def sample(preds, temperature=1.0):
 
 def on_epoch_end(epoch, logs):
     # Function invoked at end of each epoch. Prints generated text.
-    print()
-    print('----- Generating text after Epoch: %d' % epoch)
+    output_file.write('\n')
+    output_file.write('\n----- Generating text after Epoch: %d' % epoch)
 
     start_index = random.randint(0, len(text) - maxlen - 1)
-    for diversity in [0.2, 0.5, 1.0, 1.2]:
-        print('----- diversity:', diversity)
+    for diversity in diversity_range:
+        output_file.write('\n----- diversity:' + str(diversity))
 
         generated = ''
         sentence = text[start_index: start_index + maxlen]
         generated += sentence
-        print('----- Generating with seed: "' + sentence + '"')
-        sys.stdout.write(generated)
+        output_file.write('\n----- Generating with seed: "' + sentence + '"')
+        output_file.write('\n\n' + generated)
 
         for i in range(400):
             x_pred = np.zeros((1, maxlen, len(chars)))
@@ -96,8 +108,8 @@ def on_epoch_end(epoch, logs):
             generated += next_char
             sentence = sentence[1:] + next_char
 
-            sys.stdout.write(next_char)
-            sys.stdout.flush()
+            output_file.write(next_char)
+            # output_file.flush()
         print()
 
 print_callback = LambdaCallback(on_epoch_end=on_epoch_end)
