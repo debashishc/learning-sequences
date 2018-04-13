@@ -45,11 +45,12 @@ y = np_utils.to_categorical(dataY)
 model = Sequential()
 model.add(LSTM(256, input_shape=(X.shape[1], X.shape[2]), return_sequences=True))
 model.add(Dropout(0.2))
-model.add(LSTM(256))
-model.add(Dropout(0.2))
+# model.add(LSTM(256))
+# model.add(Dropout(0.2))
 model.add(Dense(y.shape[1], activation='softmax'))
 # load the network weights
-filename = "weights-improvement-47-1.2219-bigger.hdf5"
+# filename = "weights-improvement-47-1.2219-bigger.hdf5"
+filename = 'weights-improvement-07-2.4893.hdf5'
 model.load_weights(filename)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 # pick a random seed
