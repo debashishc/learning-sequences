@@ -50,6 +50,7 @@ model_size=input('Small(S) OR Large(L): ')
 # define the LSTM model
 model = Sequential()
 
+# 
 NUM_HIDDEN_UNITS = 256
 ACTIVATION = 'softmax'
 LOSS = 'categorical_crossentropy'
