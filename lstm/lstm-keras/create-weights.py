@@ -1,5 +1,5 @@
 
-# Small LSTM Network to Generate Text for Alice in Wonderland
+# LSTM Network to Generate Text
 import numpy
 from keras.models import Sequential
 from keras.layers import Dense
@@ -7,18 +7,22 @@ from keras.layers import Dropout
 from keras.layers import LSTM
 from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
+
 # load ascii text and covert to lowercase
 filename = "wonderland.txt"
 raw_text = open(filename).read()
 raw_text = raw_text.lower()
+
 # create mapping of unique chars to integers
 chars = sorted(list(set(raw_text)))
 char_to_int = dict((c, i) for i, c in enumerate(chars))
+
 # summarize the loaded data
 n_chars = len(raw_text)
 n_vocab = len(chars)
 print ("Total Characters: ", n_chars)
 print ("Total Vocab: ", n_vocab)
+
 # prepare the dataset of input to output pairs encoded as integers
 seq_length = 100
 dataX = []
@@ -30,22 +34,32 @@ for i in range(0, n_chars - seq_length, 1):
 	dataY.append(char_to_int[seq_out])
 n_patterns = len(dataX)
 print ("Total Patterns: ", n_patterns)
+
 # reshape X to be [samples, time steps, features]
 X = numpy.reshape(dataX, (n_patterns, seq_length, 1))
+
 # normalize
 X = X / float(n_vocab)
+
 # one hot encode the output variable
 y = np_utils.to_categorical(dataY)
 
-model_size=input('Small OR Large: ')
+# indicate model depth
+model_size=input('Small(S) OR Large(L): ')
 
-if model_size.lower() == 'small':
-	# define the LSTM model
-	model = Sequential()
-	model.add(LSTM(256, input_shape=(X.shape[1], X.shape[2])))
+# define the LSTM model
+model = Sequential()
+
+NUM_HIDDEN_UNITS = 256
+ACTIVATION = 'softmax'
+LOSS = 'categorical_crossentropy'
+OPTMIZER = 'adam'
+
+if model_size.lower() == 's':
+	model.add(LSTM(NUM_HIDDEN_UNITS, input_shape=(X.shape[1], X.shape[2])))
 	model.add(Dropout(0.2))
-	model.add(Dense(y.shape[1], activation='softmax'))
-	model.compile(loss='categorical_crossentropy', optimizer='adam')
+	model.add(Dense(y.shape[1], activation=ACTIVATION))
+	model.compile(loss=LOSS, optimizer=OPTMIZER)
 	# define the checkpoint
 	filepath="weights-improvement-{epoch:02d}-{loss:.4f}.hdf5"
 	checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
@@ -54,13 +68,13 @@ if model_size.lower() == 'small':
 	model.fit(X, y, epochs=20, batch_size=128, callbacks=callbacks_list)
 
 else:
-	model = Sequential()
-	model.add(LSTM(256, input_shape=(X.shape[1], X.shape[2]), return_sequences=True))
+	model.add(LSTM(NUM_HIDDEN_UNITS, input_shape=(
+		X.shape[1], X.shape[2]), return_sequences=True))
 	model.add(Dropout(0.2))
-	model.add(LSTM(256))
+	model.add(LSTM(NUM_HIDDEN_UNITS))
 	model.add(Dropout(0.2))
-	model.add(Dense(y.shape[1], activation='softmax'))
-	model.compile(loss='categorical_crossentropy', optimizer='adam')
+	model.add(Dense(y.shape[1], activation=ACTIVATION))
+	model.compile(loss=LOSS, optimizer=OPTMIZER)
 	# define the checkpoint
 	filepath="weights-improvement-{epoch:02d}-{loss:.4f}-bigger.hdf5"
 	checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
