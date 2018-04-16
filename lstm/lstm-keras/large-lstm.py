@@ -61,7 +61,7 @@ model.load_weights(filename)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 text_dict = dict()
-for i in range(100):
+for i in range(10):
 	if i%10 == 0:
 		print('Iteration: ', i)
 
@@ -94,6 +94,7 @@ print(text_dict)
 
 import csv
 
+# create csv file for text and score for human(1) or machine(0) generated
 fieldnames = ['index', 'text', 'score']
 with open('text_scores.csv', 'w', newline='') as csvfile:
 	writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
