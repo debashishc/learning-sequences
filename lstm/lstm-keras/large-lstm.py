@@ -60,23 +60,43 @@ filename = "weights-improvement-39-1.3837-bigger.hdf5"
 model.load_weights(filename)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
-# pick a random seed
-start = numpy.random.randint(0, len(dataX)-1)
-pattern = dataX[start]
-print ("Seed:")
-sentence = ''.join([int_to_char[value] for value in pattern])
-print(sentence)
-# print ("\"", ''.join([int_to_char[value] for value in pattern]), "\"")
+text_dict = dict()
+for i in range(100):
+	if i%10 == 0:
+		print('Iteration: ', i)
 
-# generate characters
-for i in range(1000):
-	x = numpy.reshape(pattern, (1, len(pattern), 1))
-	x = x / float(n_vocab)
-	prediction = model.predict(x, verbose=0)
-	index = numpy.argmax(prediction)
-	result = int_to_char[index]
-	seq_in = [int_to_char[value] for value in pattern]
-	sys.stdout.write(result)
-	pattern.append(index)
-	pattern = pattern[1:len(pattern)]
-print ("\nDone.")
+	# pick a random seed
+	start = numpy.random.randint(0, len(dataX)-1)
+	pattern = dataX[start]
+	# print ("Seed text:")
+	seed_text = ''.join([int_to_char[value] for value in pattern])
+	# print ("\"", seed_text, "\"")
+
+	# generate characters
+	generated_text = ''
+	for i in range(100):
+		x = numpy.reshape(pattern, (1, len(pattern), 1))
+		x = x / float(n_vocab)
+		prediction = model.predict(x, verbose=0)
+		index = numpy.argmax(prediction)
+		result = int_to_char[index]
+		generated_text += result
+		seq_in = [int_to_char[value] for value in pattern]
+		pattern.append(index)
+		pattern = pattern[1:len(pattern)]
+	# print("\nGenerated text: \n", generated_text)
+	# print ("\nDone.")
+
+	text_dict[i] = (seed_text, 1)
+	text_dict[i+100] = (generated_text, 0)
+
+print(text_dict)
+
+import csv
+
+fieldnames = ['index', 'text', 'score']
+with open('text_scores.csv', 'w', newline='') as csvfile:
+	writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+	writer.writeheader()
+	data = [dict(zip(fieldnames, [k, v[0], v[1]])) for k, v in text_dict.items()]
+	writer.writerows(data)

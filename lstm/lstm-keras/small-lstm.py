@@ -45,7 +45,8 @@ X = X / float(n_vocab)
 # one hot encode the output variable
 y = np_utils.to_categorical(dataY)
 
-# define the LSTM model
+# LSTM model with a single hidden layer with 256 memory units
+# dropout probability 0.2, output is a FC layer using softmax activation
 model = Sequential()
 model.add(LSTM(256, input_shape=(X.shape[1], X.shape[2])))
 model.add(Dropout(0.2))
