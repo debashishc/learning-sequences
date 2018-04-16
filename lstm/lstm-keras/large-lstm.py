@@ -61,9 +61,9 @@ model.load_weights(filename)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 text_dict = dict()
-for i in range(10):
-	if i%10 == 0:
-		print('Iteration: ', i)
+for ix in range(10000):
+	if ix%10 == 0:
+		print('Iteration: ', ix)
 
 	# pick a random seed
 	start = numpy.random.randint(0, len(dataX)-1)
@@ -87,8 +87,8 @@ for i in range(10):
 	# print("\nGenerated text: \n", generated_text)
 	# print ("\nDone.")
 
-	text_dict[i] = (seed_text, 1)
-	text_dict[i+100] = (generated_text, 0)
+	text_dict[ix] = (seed_text, 1)
+	text_dict[ix+100] = (generated_text, 0)
 
 print(text_dict)
 
