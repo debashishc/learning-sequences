@@ -61,7 +61,7 @@ model.load_weights(filename)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 text_dict = dict()
-for ix in range(1000):
+for ix in range(500):
 	if ix%10 == 0:
 		print('Iteration: ', ix)
 
