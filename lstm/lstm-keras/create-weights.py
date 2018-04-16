@@ -13,6 +13,8 @@ filename = "wonderland.txt"
 raw_text = open(filename).read()
 raw_text = raw_text.lower()
 
+### CON: model not considering upper case letters
+
 # create mapping of unique chars to integers
 chars = sorted(list(set(raw_text)))
 char_to_int = dict((c, i) for i, c in enumerate(chars))
@@ -50,7 +52,7 @@ model_size=input('Small(S) OR Large(L): ')
 # define the LSTM model
 model = Sequential()
 
-# 
+# parameters
 NUM_HIDDEN_UNITS = 256
 ACTIVATION = 'softmax'
 LOSS = 'categorical_crossentropy'
