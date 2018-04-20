@@ -1,4 +1,3 @@
-
 # LSTM Network to Generate Text
 import numpy
 from keras.models import Sequential
@@ -58,12 +57,14 @@ ACTIVATION = 'softmax'
 LOSS = 'categorical_crossentropy'
 OPTMIZER = 'adam'
 
+print(X.shape, y.shape)
+
 if model_size.lower() == 's':
 	model.add(LSTM(NUM_HIDDEN_UNITS, input_shape=(X.shape[1], X.shape[2])))
 	model.add(Dropout(0.2))
 	model.add(Dense(y.shape[1], activation=ACTIVATION))
 	model.compile(loss=LOSS, optimizer=OPTMIZER)
-	# define the checkpoint
+	# define the checkpoint 
 	filepath="weights-improvement-{epoch:02d}-{loss:.4f}.hdf5"
 	checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
 	callbacks_list = [checkpoint]

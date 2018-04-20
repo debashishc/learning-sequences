@@ -1,12 +1,13 @@
 filename = 'text_scores.csv'
 
+import json
 import pandas as pd
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import LSTM
-from keras.layers import Dropout
-from keras.layers import Embedding
 import numpy as np
+import keras
+from keras.models import Sequential
+from keras.layers import Dense, LSTM, Dropout, Activation, Embedding
+import keras.preprocessing.text as kpt
+from keras.preprocessing.text import Tokenizer
 
 def load_df(filename):
     raw = pd.read_csv(filename, index_col='index')
@@ -18,48 +19,47 @@ def load_df(filename):
 # load the text and score as a list of tuples
 training = load_df(filename)
 
-# load ascii text and covert to lowercase
-filename = "wonderland.txt"
-raw_text = open(filename).read()
-raw_text = raw_text.lower()
+# create training data from the text
+train_x = [x[0] for x in training]
+# index all the sentiment labels
+train_y = np.asarray([x[1] for x in training])
 
-# create mapping of unique chars to integers, and a reverse mapping
-chars = sorted(list(set(raw_text)))
-char_to_int = dict((c, i) for i, c in enumerate(chars))
-int_to_char = dict((i, c) for i, c in enumerate(chars))
+# only work with the 5000 most popular words found in our dataset
+max_words = 5000
 
-# summarize the loaded data
-n_chars = len(raw_text)
-n_vocab = len(chars)
-print ("Total Characters: ", n_chars)
-print ("Total Vocab: ", n_vocab)
+# create a new Tokenizer and feed texts to the Tokenizer
+tokenizer = Tokenizer(num_words=max_words)
+tokenizer.fit_on_texts(train_x)
 
-from keras.preprocessing import sequence
+# Tokenizers come with a convenient list of words and IDs
+dictionary = tokenizer.word_index
+with open('dictionary.json', 'w') as dictionary_file:
+    json.dump(dictionary, dictionary_file)
 
-# create our training data from the text
-textList = [x[0] for x in training]
+def convert_text_to_index_array(text):
+    # use `text_to_word_sequence` to make all texts the same length -- in this case, the length
+    # of the longest text in the set.
+    return [dictionary[word] for word in kpt.text_to_word_sequence(text)]
 
-# prepare the dataset of input
-seqLen = 100
-trainX = []
-for text in textList:
-    _x = [char_to_int[char] for char in text]
-    assert len(_x) == 100
-    trainX.append(_x)
 
-n_patterns = len(trainX)
-print("Total patterns : {}".format(len(trainX))) # sanity check
+allWordIndices = []
+# for each text, change each token to its ID in the Tokenizer's word_index
+for text in train_x:
+    wordIndices = convert_text_to_index_array(text)
+    allWordIndices.append(wordIndices)
 
-trainX = np.divide(trainX, n_vocab)
-trainY = np.asarray([x[1] for x in training])
-# print(trainX[1], trainY[1])
-trainX = np.reshape(trainX, (n_patterns, seqLen,))
-print('shape: ', trainX.shape)
-print('dasd',trainX[0])
+# now we have a list of all texts converted to index arrays.
+# cast as an array for future usage.
+allWordIndices = np.asarray(allWordIndices)
 
+# create one-hot matrices out of the indexed texts
+train_x = tokenizer.sequences_to_matrix(allWordIndices, mode='binary')
+# treat the labels as categories
+train_y = keras.utils.to_categorical(train_y, 2)
+
+# Building the model
 model = Sequential()
-# model.add(Embedding((n_patterns, seqLen,100),128))
-model.add(LSTM(512, input_shape=(1, trainX.shape) ,activation='relu'))
+model.add(Dense(512, input_shape=(max_words,), activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(256, activation='sigmoid'))
 model.add(Dropout(0.5))
@@ -69,11 +69,18 @@ model.compile(loss='binary_crossentropy',
               optimizer='adam',
               metrics=['accuracy'])
 
-filepath="weights-classifier-{epoch:02d}-{accuracy:0.4f}.hdf5"
-from keras.callbacks import ModelCheckpoint
-checkpoint = ModelCheckpoint(filepath, monitor='accuracy',verbose=1, save_best_only=True, mode='max')
-callbacks_list = [checkpoint]
-model.fit(trainX, trainY, epochs=3, batch_size=128, shuffle=True)
+model.fit(train_x, train_y,
+          batch_size=128,
+          epochs=3,
+          validation_split=0.1,
+          shuffle=True)
+
 # Final evaluation of the model
-scores = model.evaluate(trainX, trainY, verbose=0)
+scores = model.evaluate(train_x, train_y, verbose=0)
 print("Accuracy: %.2f%%" % (scores[1]*100))
+
+model_json = model.to_json()
+with open('model.json', 'w') as json_file:
+    json_file.write(model_json)
+
+model.save_weights('model.h5')
