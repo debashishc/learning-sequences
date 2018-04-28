@@ -9,14 +9,24 @@ from keras.utils import np_utils
 
 # load ascii text and covert to lowercase
 filename = "wonderland.txt"
-raw_text = open(filename).read()
-raw_text = raw_text.lower()
+
+def get_raw_text(filename):
+	with open(filename) as f:
+		raw_text = f.read()
+		raw_text = raw_text.lower()
+	return raw_text
 
 ### CON: model not considering upper case letters
 
-# create mapping of unique chars to integers
-chars = sorted(list(set(raw_text)))
-char_to_int = dict((c, i) for i, c in enumerate(chars))
+def get_char_to_int(raw_text):
+	# create mapping of unique chars to integers
+	chars = sorted(list(set(raw_text)))
+	char_to_int = dict((c, i) for i, c in enumerate(chars))
+
+	return chars, char_to_int
+
+raw_text = get_raw_text(filename)
+chars, char_to_int = get_char_to_int(raw_text)
 
 # summarize the loaded data
 n_chars = len(raw_text)

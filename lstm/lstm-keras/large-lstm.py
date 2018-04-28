@@ -63,36 +63,36 @@ model.load_weights(filename)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 text_dict = dict()
-for ix in range(500):
-	if ix%10 == 0:
-		print('Iteration: ', ix)
+# for ix in range(500):
+# 	if ix%10 == 0:
+# 		print('Iteration: ', ix)
 
-	# pick a random seed
-	start = numpy.random.randint(0, len(dataX)-1)
-	pattern = dataX[start]
-	print ("Seed text:")
-	seed_text = ''.join([int_to_char[value] for value in pattern])
-	print ("\"", seed_text, "\"")
+# pick a random seed
+start = numpy.random.randint(0, len(dataX)-1)
+pattern = dataX[start]
+print ("Seed text:")
+seed_text = ''.join([int_to_char[value] for value in pattern])
+print ("\"", seed_text, "\"")
 
-	# generate characters
-	generated_text = ''
-	for i in range(100):
-		x = numpy.reshape(pattern, (1, len(pattern), 1))
-		x = x / float(n_vocab)
-		prediction = model.predict(x, verbose=0)
-		index = numpy.argmax(prediction)
-		result = int_to_char[index]
-		generated_text += result
-		seq_in = [int_to_char[value] for value in pattern]
-		pattern.append(index)
-		pattern = pattern[1:len(pattern)]
-	print("\nGenerated text: \n", generated_text)
-	print ("\nDone.")
+# generate characters
+generated_text = ''
+for i in range(200):
+	x = numpy.reshape(pattern, (1, len(pattern), 1))
+	x = x / float(n_vocab)
+	prediction = model.predict(x, verbose=0)
+	index = numpy.argmax(prediction)
+	result = int_to_char[index]
+	generated_text += result
+	seq_in = [int_to_char[value] for value in pattern]
+	pattern.append(index)
+	pattern = pattern[1:len(pattern)]
+print("\nGenerated text: \n", generated_text)
+print ("\nDone.")
 
-	text_dict[ix] = (seed_text, 1)
-	text_dict[ix+1000] = (generated_text, 0)
+# text_dict[ix] = (seed_text, 1)
+# text_dict[ix+1000] = (generated_text, 0)
 
-print(text_dict)
+# print(text_dict)
 
 import csv
 
