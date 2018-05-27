@@ -1,4 +1,5 @@
 # Load LSTM network and generate text
+
 import sys
 import numpy
 from keras.models import Sequential

@@ -1,0 +1,7 @@
+Edit-distance
+
+The minimum edit-distance between two strings is the min number of 
+editing operations (insertion, deletion or substitution) needed to transform one 
+into the other.
+
+Levenshtein distance
