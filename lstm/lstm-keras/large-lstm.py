@@ -11,7 +11,7 @@ from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
 
 # load ascii text and covert to lowercase
-filename = "wonderland.txt"
+filename = "colombiano.txt"
 raw_text = open(filename).read()
 raw_text = raw_text.lower()
 
@@ -57,8 +57,9 @@ model.add(Dropout(0.2))
 model.add(Dense(y.shape[1], activation='softmax'))
 
 # load the network weights
-weights_folder = "large-lstm-weights/"
-filename = weights_folder + "weights-improvement-39-1.3837-bigger.hdf5"
+# weights_folder = "large-lstm-weights/"
+weights_folder = ""
+filename = weights_folder + "weights-improvement-17-1.5762-bigger.hdf5"
 model.load_weights(filename)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
@@ -76,10 +77,11 @@ print ("\"", seed_text, "\"")
 
 # generate characters
 generated_text = ''
-for i in range(200):
+
+for i in range(1000):
 	x = numpy.reshape(pattern, (1, len(pattern), 1))
 	x = x / float(n_vocab)
-	prediction = model.predict(x, verbose=0)
+	prediction = model.predict(x, verbose=0.6)
 	index = numpy.argmax(prediction)
 	result = int_to_char[index]
 	generated_text += result
@@ -97,9 +99,9 @@ print ("\nDone.")
 import csv
 
 # create csv file for text and score for human(1) or machine(0) generated
-fieldnames = ['index', 'text', 'score']
-with open('text_scores.csv', 'w', newline='') as csvfile:
-	writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-	writer.writeheader()
-	data = [dict(zip(fieldnames, [k, v[0], v[1]])) for k, v in text_dict.items()]
-	writer.writerows(data)
+# fieldnames = ['index', 'text', 'score']
+# with open('text_scores.csv', 'w', newline='') as csvfile:
+# 	writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+# 	writer.writeheader()
+# 	data = [dict(zip(fieldnames, [k, v[0], v[1]])) for k, v in text_dict.items()]
+# 	writer.writerows(data)
