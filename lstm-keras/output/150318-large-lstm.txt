@@ -1,0 +1,212 @@
+FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+Total Characters:  163781
+Total Vocab:  59
+Total Patterns:  163681
+Small OR Large: l
+Epoch 1/50
+2018-04-15 09:04:05.420507: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-15 09:04:05.420524: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-15 09:04:05.420528: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-15 09:04:05.420532: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-15 09:04:05.420535: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+163681/163681 [==============================] - 1307s 8ms/step - loss: 2.8166
+
+Epoch 00001: loss improved from inf to 2.81660, saving model to weights-improvement-01-2.8166-bigger.hdf5
+Epoch 2/50
+163681/163681 [==============================] - 1290s 8ms/step - loss: 2.5319
+
+Epoch 00002: loss improved from 2.81660 to 2.53195, saving model to weights-improvement-02-2.5319-bigger.hdf5
+Epoch 3/50
+163681/163681 [==============================] - 1289s 8ms/step - loss: 2.3331
+
+Epoch 00003: loss improved from 2.53195 to 2.33309, saving model to weights-improvement-03-2.3331-bigger.hdf5
+Epoch 4/50
+163681/163681 [==============================] - 1290s 8ms/step - loss: 2.1834
+
+Epoch 00004: loss improved from 2.33309 to 2.18343, saving model to weights-improvement-04-2.1834-bigger.hdf5
+Epoch 5/50
+163681/163681 [==============================] - 1289s 8ms/step - loss: 2.0745
+
+Epoch 00005: loss improved from 2.18343 to 2.07448, saving model to weights-improvement-05-2.0745-bigger.hdf5
+Epoch 6/50
+163681/163681 [==============================] - 1288s 8ms/step - loss: 1.9887
+
+Epoch 00006: loss improved from 2.07448 to 1.98869, saving model to weights-improvement-06-1.9887-bigger.hdf5
+Epoch 7/50
+163681/163681 [==============================] - 1288s 8ms/step - loss: 1.9187
+
+Epoch 00007: loss improved from 1.98869 to 1.91873, saving model to weights-improvement-07-1.9187-bigger.hdf5
+Epoch 8/50
+163681/163681 [==============================] - 1289s 8ms/step - loss: 1.8636
+
+Epoch 00008: loss improved from 1.91873 to 1.86362, saving model to weights-improvement-08-1.8636-bigger.hdf5
+Epoch 9/50
+163681/163681 [==============================] - 1289s 8ms/step - loss: 1.8105
+
+Epoch 00009: loss improved from 1.86362 to 1.81052, saving model to weights-improvement-09-1.8105-bigger.hdf5
+Epoch 10/50
+163681/163681 [==============================] - 1289s 8ms/step - loss: 1.7681
+
+Epoch 00010: loss improved from 1.81052 to 1.76810, saving model to weights-improvement-10-1.7681-bigger.hdf5
+Epoch 11/50
+163681/163681 [==============================] - 1289s 8ms/step - loss: 1.7346
+
+Epoch 00011: loss improved from 1.76810 to 1.73460, saving model to weights-improvement-11-1.7346-bigger.hdf5
+Epoch 12/50
+163681/163681 [==============================] - 1288s 8ms/step - loss: 1.7017
+
+Epoch 00012: loss improved from 1.73460 to 1.70170, saving model to weights-improvement-12-1.7017-bigger.hdf5
+Epoch 13/50
+163681/163681 [==============================] - 1288s 8ms/step - loss: 1.6675
+
+Epoch 00013: loss improved from 1.70170 to 1.66746, saving model to weights-improvement-13-1.6675-bigger.hdf5
+Epoch 14/50
+163681/163681 [==============================] - 1288s 8ms/step - loss: 1.6409
+
+Epoch 00014: loss improved from 1.66746 to 1.64092, saving model to weights-improvement-14-1.6409-bigger.hdf5
+Epoch 15/50
+163681/163681 [==============================] - 1287s 8ms/step - loss: 1.6162
+
+Epoch 00015: loss improved from 1.64092 to 1.61619, saving model to weights-improvement-15-1.6162-bigger.hdf5
+Epoch 16/50
+163681/163681 [==============================] - 1287s 8ms/step - loss: 1.5913
+
+Epoch 00016: loss improved from 1.61619 to 1.59125, saving model to weights-improvement-16-1.5913-bigger.hdf5
+Epoch 17/50
+163681/163681 [==============================] - 1287s 8ms/step - loss: 1.5740
+
+Epoch 00017: loss improved from 1.59125 to 1.57400, saving model to weights-improvement-17-1.5740-bigger.hdf5
+Epoch 18/50
+163681/163681 [==============================] - 1286s 8ms/step - loss: 1.5506
+
+Epoch 00018: loss improved from 1.57400 to 1.55062, saving model to weights-improvement-18-1.5506-bigger.hdf5
+Epoch 19/50
+163681/163681 [==============================] - 1286s 8ms/step - loss: 1.5364
+
+Epoch 00019: loss improved from 1.55062 to 1.53644, saving model to weights-improvement-19-1.5364-bigger.hdf5
+Epoch 20/50
+163681/163681 [==============================] - 1286s 8ms/step - loss: 1.5202
+
+Epoch 00020: loss improved from 1.53644 to 1.52024, saving model to weights-improvement-20-1.5202-bigger.hdf5
+Epoch 21/50
+163681/163681 [==============================] - 1286s 8ms/step - loss: 1.5027
+
+Epoch 00021: loss improved from 1.52024 to 1.50270, saving model to weights-improvement-21-1.5027-bigger.hdf5
+Epoch 22/50
+163681/163681 [==============================] - 1287s 8ms/step - loss: 1.4917
+
+Epoch 00022: loss improved from 1.50270 to 1.49173, saving model to weights-improvement-22-1.4917-bigger.hdf5
+Epoch 23/50
+163681/163681 [==============================] - 1286s 8ms/step - loss: 1.4813
+
+Epoch 00023: loss improved from 1.49173 to 1.48133, saving model to weights-improvement-23-1.4813-bigger.hdf5
+Epoch 24/50
+163681/163681 [==============================] - 1288s 8ms/step - loss: 1.4684
+
+Epoch 00024: loss improved from 1.48133 to 1.46845, saving model to weights-improvement-24-1.4684-bigger.hdf5
+Epoch 25/50
+163681/163681 [==============================] - 1287s 8ms/step - loss: 1.4591
+
+Epoch 00025: loss improved from 1.46845 to 1.45912, saving model to weights-improvement-25-1.4591-bigger.hdf5
+Epoch 26/50
+163681/163681 [==============================] - 1286s 8ms/step - loss: 1.4467
+
+Epoch 00026: loss improved from 1.45912 to 1.44674, saving model to weights-improvement-26-1.4467-bigger.hdf5
+Epoch 27/50
+163681/163681 [==============================] - 1285s 8ms/step - loss: 1.4369
+
+Epoch 00027: loss improved from 1.44674 to 1.43693, saving model to weights-improvement-27-1.4369-bigger.hdf5
+Epoch 28/50
+163681/163681 [==============================] - 1286s 8ms/step - loss: 1.4315
+
+Epoch 00028: loss improved from 1.43693 to 1.43146, saving model to weights-improvement-28-1.4315-bigger.hdf5
+Epoch 29/50
+163681/163681 [==============================] - 1286s 8ms/step - loss: 1.4282
+
+Epoch 00029: loss improved from 1.43146 to 1.42818, saving model to weights-improvement-29-1.4282-bigger.hdf5
+Epoch 30/50
+163681/163681 [==============================] - 1285s 8ms/step - loss: 1.4617
+
+Epoch 00030: loss did not improve
+Epoch 31/50
+163681/163681 [==============================] - 1286s 8ms/step - loss: 1.4236
+
+Epoch 00031: loss improved from 1.42818 to 1.42364, saving model to weights-improvement-31-1.4236-bigger.hdf5
+Epoch 32/50
+163681/163681 [==============================] - 1286s 8ms/step - loss: 1.4031
+
+Epoch 00032: loss improved from 1.42364 to 1.40314, saving model to weights-improvement-32-1.4031-bigger.hdf5
+Epoch 33/50
+163681/163681 [==============================] - 1284s 8ms/step - loss: 1.4001
+
+Epoch 00033: loss improved from 1.40314 to 1.40015, saving model to weights-improvement-33-1.4001-bigger.hdf5
+Epoch 34/50
+163681/163681 [==============================] - 1285s 8ms/step - loss: 1.4338
+
+Epoch 00034: loss did not improve
+Epoch 35/50
+163681/163681 [==============================] - 1284s 8ms/step - loss: 1.3973
+
+Epoch 00035: loss improved from 1.40015 to 1.39734, saving model to weights-improvement-35-1.3973-bigger.hdf5
+Epoch 36/50
+163681/163681 [==============================] - 1284s 8ms/step - loss: 1.3932
+
+Epoch 00036: loss improved from 1.39734 to 1.39317, saving model to weights-improvement-36-1.3932-bigger.hdf5
+Epoch 37/50
+163681/163681 [==============================] - 1284s 8ms/step - loss: 1.4000
+
+Epoch 00037: loss did not improve
+Epoch 38/50
+163681/163681 [==============================] - 1284s 8ms/step - loss: 1.3944
+
+Epoch 00038: loss did not improve
+Epoch 39/50
+163681/163681 [==============================] - 1285s 8ms/step - loss: 1.3837
+
+Epoch 00039: loss improved from 1.39317 to 1.38369, saving model to weights-improvement-39-1.3837-bigger.hdf5
+Epoch 40/50
+163681/163681 [==============================] - 1285s 8ms/step - loss: 2.3912
+
+Epoch 00040: loss did not improve
+Epoch 41/50
+163681/163681 [==============================] - 1284s 8ms/step - loss: 2.0809
+
+Epoch 00041: loss did not improve
+Epoch 42/50
+163681/163681 [==============================] - 1285s 8ms/step - loss: 2.9653
+
+Epoch 00042: loss did not improve
+Epoch 43/50
+163681/163681 [==============================] - 1285s 8ms/step - loss: 2.9262
+
+Epoch 00043: loss did not improve
+Epoch 44/50
+163681/163681 [==============================] - 1285s 8ms/step - loss: 2.8699
+
+Epoch 00044: loss did not improve
+Epoch 45/50
+163681/163681 [==============================] - 1285s 8ms/step - loss: 2.7726
+
+Epoch 00045: loss did not improve
+Epoch 46/50
+163681/163681 [==============================] - 1285s 8ms/step - loss: 2.7066
+
+Epoch 00046: loss did not improve
+Epoch 47/50
+163681/163681 [==============================] - 1285s 8ms/step - loss: 2.6701
+
+Epoch 00047: loss did not improve
+Epoch 48/50
+163681/163681 [==============================] - 1285s 8ms/step - loss: 2.6145
+
+Epoch 00048: loss did not improve
+Epoch 49/50
+163681/163681 [==============================] - 1285s 8ms/step - loss: 2.4650
+
+Epoch 00049: loss did not improve
+Epoch 50/50
+163681/163681 [==============================] - 1285s 8ms/step - loss: 2.3609
+
+Epoch 00050: loss did not improve
