@@ -1,238 +1,228 @@
-index,text,score,correct spelling,percent,novel word count
-0,"here may be one.'
+index,text,score,correct spelling,percent,novel word spelled,novel words
+0," justice before, but she had read
+about them in books, and she was quite pleased to find that she kn",1,20,1.0,"(1, ['kn'])","(1, ['kn'])"
+1000,"oked up and the pueen, 'i don't know the doomouse said to her the doomouse is the temescops of the w",0,16,0.76,"(2, [""'i"", 'w'])","(7, ['oked', 'pueen,', ""'i"", 'doomouse', 'doomouse', 'temescops', 'w'])"
+1,"now,' said
+alice to herself, 'in my going out altogether, like a candle. i wonder
+what i should be l",1,20,1.0,"(4, ['alice', 'i', 'i', 'l'])","(4, ['alice', 'i', 'i', 'l'])"
+1001,ake out of the semeocope the datchnow of the doorr! and the mort of the sabbit was not a loment to s,0,18,0.82,"(4, ['ake', 'mort', 'loment', 's'])","(8, ['ake', 'semeocope', 'datchnow', 'doorr!', 'mort', 'sabbit', 'loment', 's'])"
+2,"hite rabbit with pink eyes ran
+close by her.
 
-'one, indeed!' said the dormouse indignantly. however, he consented to
-go on. 'an",1,17,1.0,1
-1000,d the murt oay it would be a great hatd and the pueen some of the doors! and weat it the door the ha,0,19,0.79,2
-1,"t seem to have any rules in particular;
-at least, if there are, nobody attends to them--and you've n",1,18,0.95,2
-1001,"ake the dance?
-    'he you dan done the mort of the serter of the serters.
+there was nothing so very remarkable in that; nor did ",1,18,0.95,"(0, [])","(1, ['hite'])"
+1002,"the doom the was soeezing on the time, 
+'i don't know what i can't tee the dormouse say in the sea,'",0,20,0.95,"(5, ['doom', ""'i"", 'i', 'tee', 'dormouse'])","(6, ['doom', 'soeezing', ""'i"", 'i', 'tee', 'dormouse'])"
+3,"s as this is may it won't be raving mad--at least not so mad as
+it was in march.' as she said this, ",1,22,0.96,"(2, ['s', ""march.'""])","(2, ['s', ""march.'""])"
+1003,she was going to see it was see as the corr that she was soeekig to the thing soue of the sabbit say,0,20,0.87,"(1, ['corr'])","(4, ['corr', 'soeekig', 'soue', 'sabbit'])"
+4,"alice thought to herself, 'i
+wonder what they will do next! if they had any sense, they'd take the
+r",1,20,1.0,"(3, ['alice', ""'i"", 'r'])","(3, ['alice', ""'i"", 'r'])"
+1004,"eason i dan tereat it would be a great gurry to dat the thme, i suppose it makes the doomouse is to ",0,18,0.82,"(5, ['i', 'dan', 'gurry', 'dat', 'i'])","(9, ['eason', 'i', 'dan', 'tereat', 'gurry', 'dat', 'thme,', 'i', 'doomouse'])"
+5,"'
 
-                        ",0,13,0.87,3
-2,"tle sister of hers
-would, in the after-time, be herself a grown woman; and how she would
-keep, throu",1,18,0.95,1
-1002,"gh the cook the was soeezing on the thme the doom the was soeezing on the time, 
-'i don't know what ",0,17,0.81,2
-3,"he terms of the full project
-gutenberg-tm license (available with this file or online at
-http://gute",1,14,0.88,1
-1003,"nberg.org/
+'nobody asked your opinion,' said alice.
 
+'who's making personal remarks now?' the hatter asked t",1,14,0.88,"(2, ['alice.', 't'])","(3, ['alice.', ""'who's"", 't'])"
+1005,"he mouse in the door, 
+'i don't know what i can't ree whth an any ratter of the sabeiter!' anice sep",0,19,0.9,"(6, [""'i"", 'i', 'ree', 'ratter', 'anice', 'sep'])","(8, [""'i"", 'i', 'ree', 'whth', 'ratter', ""sabeiter!'"", 'anice', 'sep'])"
+6,"mission of project gutenberg-tm
 
+project gutenberg-tm is synonymous with the free distribution of
+el",1,12,0.86,"(3, ['project', 'project', 'el'])","(5, ['project', 'gutenberg-tm', 'project', 'gutenberg-tm', 'el'])"
+1006,ectronic works in a refund of the project gutenberg literary archive foundation are nonked and ansap,0,12,0.75,"(4, ['project', 'literary', 'archive', 'foundation'])","(8, ['ectronic', 'project', 'gutenberg', 'literary', 'archive', 'foundation', 'nonked', 'ansap'])"
+7,"on't want to go among mad people,' alice remarked.
 
+'oh, you can't help that,' said the cat: 'we're ",1,18,1.0,"(2, [""on't"", 'alice'])","(2, [""on't"", 'alice'])"
+1007,"mooking to the thing is mad.
+you know. would not mear the door the sememcors of the doorsa bod the m",0,18,0.86,"(2, ['mear', 'bod'])","(5, ['mooking', 'mear', 'sememcors', 'doorsa', 'bod'])"
+8,"ou keep moving round, i suppose?' said alice.
 
-                                                                                     ",0,0,0.0,0
-4," have been changed for any of them.
+'exactly so,' said the hatter: 'as the things get use",1,17,0.94,"(2, ['i', 'alice.'])","(3, ['ou', 'i', 'alice.'])"
+1008,"a to tell the door, and the mort of the sabbit was see as the court was she was going to say it the ",0,23,0.96,"(1, ['mort'])","(2, ['mort', 'sabbit'])"
+9,"h out of the way--'
 
-'i'm sure i'm not ada,' she said, 'for her hair goes in such lo",1,21,1.0,4
-1004,"ng things of the simg,' 
-'i don't know what i have to be a little birler,' she said to herself, 'i d",0,21,0.95,6
-5,"ery
-moment to be trampled under its feet, ran round the thistle again; then
-the puppy began a series",1,18,0.95,0
-1005," of the sabbit-s very eood opooee of the sobten of the table, but she said the pueen say of the word",0,16,0.76,0
-6,"ave of hearts, who only bowed and smiled in reply.
+'that generally takes some time,' interrupted the gryphon.
 
-'idiot!' said the queen, tossing her head impati",1,17,0.94,3
-1006,"ently, and she was going to see if the mock turtle sas down and said, 'i don't know what i can teil ",0,20,0.91,5
-7,"
-501(c)(3) educational corporation organized under the laws of the
-state of mississippi and granted ",1,13,0.93,1
-1007,with the project gutenberg literary archive foundation are all dopyright in the united states.      ,0,12,0.86,5
-8,"ter all: it's a set of verses.'
+'--you advance twic",1,15,0.94,"(2, ['h', 'gryphon.'])","(3, ['h', 'gryphon.', 'twic'])"
+1009,"e and she sertent!' she said the rueen, 
+'i don't know what i have to be a little birler,' the mock ",0,19,0.9,"(5, ['e', ""'i"", 'i', ""birler,'"", 'mock'])","(7, ['e', ""sertent!'"", 'rueen,', ""'i"", 'i', ""birler,'"", 'mock'])"
+10,"copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electro",1,15,1.0,"(1, ['electro'])","(1, ['electro'])"
+1010,nic works in a refund of the project gutenberg literary archive foundation are nonked and ansapient ,0,12,0.75,"(4, ['project', 'literary', 'archive', 'foundation'])","(8, ['nic', 'project', 'gutenberg', 'literary', 'archive', 'foundation', 'nonked', 'ansapient'])"
+11,"earch on, transcribe and proofread
+public domain works in creating the project gutenberg-tm
+collecti",1,11,0.79,"(1, ['project'])","(4, ['earch', 'project', 'gutenberg-tm', 'collecti'])"
+1011,on of the project gutenberg literary archive foundation are all fopyright in the project gutenberg l,0,13,0.81,"(6, ['project', 'literary', 'archive', 'foundation', 'project', 'l'])","(9, ['project', 'gutenberg', 'literary', 'archive', 'foundation', 'fopyright', 'project', 'gutenberg', 'l'])"
+12,"e turned away.
 
-'are they in the prisoner's handwriting?' asked another of the jury",1,18,1.0,1
-1008,". 
-'i don't know what i have to be a little birler,' the march hare interrupted to alice. 
-'it was t",0,20,0.95,7
-9," he says it's so useful, it's worth a hundred pounds! he
-says it kills all the rats and--oh dear!' c",1,19,0.95,0
-1009,ried the mock turtle at she sepeated to the tort of the way of the words was she was soeezing on the,0,19,0.86,3
-10,"judging by his face only, she would have called him a
-fish)--and rapped loudly at the door with his ",1,18,0.95,0
-1010,"head for a little thing in her head a little sartering, and she was going to see if he was seel a lo",0,22,0.96,2
-11,"ngs!' alice began in a loud, indignant voice, but she stopped
-hastily, for the white rabbit cried ou",1,16,0.89,1
-1011,"t again. 
-'i don't know what i have to be a little birler,' she said to herself, 'i don't know what ",0,21,1.0,5
-12,"iles down, i think--' (for, you see, alice had learnt several
-things of this sort in her lessons in ",1,18,0.95,2
-1012,"the door, and the white rabbit blowered to say the table to the was sootling to see if he was seel a",0,20,0.91,1
-13,"ded!' said alice, and she put them into a large
-flower-pot that stood near. the three soldiers wande",1,16,0.89,1
-1013,"red to say it off the harden, the dorrou of the was sole minutes in the door, and the white rabbit b",0,21,0.95,2
-14,"t seems to be a
-letter, written by the prisoner to--to somebody.'
+'come back!' the caterpillar called after her. 'i've something important
+to say!'
 
-'it must have been that,' said th",1,19,1.0,2
-1014,"e mock turtle, 
-'i dan't ree whth another mine the dance?                                           ",0,9,0.82,5
-15,"
-'not a bit,' said the caterpillar.
+t",1,16,1.0,"(3, ['e', ""'i've"", 't'])","(3, ['e', ""'i've"", 't'])"
+1012,"he march hare said to the thing satehr the right sook the had erown of the sabbit say in the door, a",0,19,0.86,"(3, ['march', 'hare', 'sook'])","(6, ['march', 'hare', 'satehr', 'sook', 'erown', 'sabbit'])"
+13," cost and with
+almost no restrictions whatsoever.  you may copy it, give it away or
+re-use it under ",1,18,1.0,"(0, [])","(0, [])"
+1013,"the project gutenberg literary archive foundation as she foundation, and wer a forna to comy it was ",0,14,0.82,"(6, ['project', 'literary', 'archive', 'foundation', 'foundation,', 'wer'])","(9, ['project', 'gutenberg', 'literary', 'archive', 'foundation', 'foundation,', 'wer', 'forna', 'comy'])"
+14,"e english, who wanted leaders, and had been of late much
+accustomed to usurpation and conquest. edwi",1,16,0.94,"(2, ['e', 'english,'])","(3, ['e', 'english,', 'edwi'])"
+1014,"ng on the table to the had gound her head with and sand of the table, but she said the pueen, 'and w",0,21,0.91,"(2, ['ng', 'w'])","(4, ['ng', 'gound', 'pueen,', 'w'])"
+15,"all the way down one side and up the other, trying every
+door, she walked sadly down the middle, won",1,20,1.0,"(0, [])","(0, [])"
+1015,"dering the pueen say the was soeezing on the thme the doom the was soeezing on the time, 
+'i don't k",0,16,0.76,"(3, ['doom', ""'i"", 'k'])","(8, ['dering', 'pueen', 'soeezing', 'thme', 'doom', 'soeezing', ""'i"", 'k'])"
+16,"nest man.'
 
-'well, perhaps your feelings may be different,' said alice; 'al",1,16,1.0,2
-1015,"d what i make mur messers '
+there was a general clapping of hands at this: it was the first really
+clever thing the ",1,19,1.0,"(0, [])","(0, [])"
+1016,"door whth the words of her head with and sand off to the white rabbit, when she was soeeking at the ",0,19,0.9,"(0, [])","(2, ['whth', 'soeeking'])"
+17,"ed him: the march hare
+moved into the dormouse's place, and alice rather unwillingly took
+the place ",1,16,0.94,"(4, ['ed', 'march', 'hare', 'alice'])","(5, ['ed', 'march', 'hare', ""dormouse's"", 'alice'])"
+1017,"of the table, but she said the pueen, 'and when i make mert ter that would be a great hatd aeen the ",0,18,0.82,"(2, ['i', 'ter'])","(6, ['pueen,', 'i', 'mert', 'ter', 'hatd', 'aeen'])"
+18,"ce hastily replied; 'only one
+doesn't like changing so often, you know.'
 
-'i don't know what i have to be a little birler,' she said to herself, ",0,19,0.86,5
-16,"y
-as if nothing had happened.
+'i don't know,' said the c",1,18,1.0,"(2, ['ce', ""'i""])","(2, ['ce', ""'i""])"
+1018,"aterpillar.
 
-'how am i to get in?' asked alice again, in a louder tone.
+'i don't know what i can't ree whth an any ratters,' said the mouse, 'and the mort of t",0,18,0.9,"(6, [""'i"", 'i', 'ree', ""ratters,'"", 'mort', 't'])","(8, ['aterpillar.', ""'i"", 'i', 'ree', 'whth', ""ratters,'"", 'mort', 't'])"
+19,"t on again:--
 
-'are you ",1,21,1.0,3
-1016,"don't know what i have to be a little birler,' the mock turtle seplied in an offended tone, and she ",0,19,0.95,4
-17,"t it was only a mouse that had
-slipped in like herself.
+'i didn't know that cheshire cats always grinned; in fact, i didn't know
+that cats co",1,19,1.0,"(5, ['t', ""'i"", 'cheshire', 'i', 'co'])","(5, ['t', ""'i"", 'cheshire', 'i', 'co'])"
+1019,uld good the same thme to be all the most of thene sout of the sea- the queen say down the thme they,0,18,0.78,"(1, ['queen'])","(6, ['uld', 'thme', 'thene', 'sout', 'queen', 'thme'])"
+20,"you're wondering why i don't put my arm round your waist,'
+the duchess said after a pause: 'the reas",1,18,0.95,"(2, ['i', 'duchess'])","(3, ['i', 'duchess', 'reas'])"
+1020,"on she was she pats of the thing io the door, and the white rabbit blowered and the was sole time wi",0,21,0.95,"(4, ['pats', 'io', 'sole', 'wi'])","(5, ['pats', 'io', 'blowered', 'sole', 'wi'])"
+21,"ol in the
+sea. the master was an old turtle--we used to call him tortoise--'
 
-'would it be of any use, now,' thought alic",1,20,0.95,1
-1017,"e, 'i don't know the might way to suint in the doorsatoon of the semper!'
+'why did you call him ",1,19,0.95,"(2, ['ol', ""tortoise--'""])","(3, ['ol', 'turtle--we', ""tortoise--'""])"
+1021,"tort,' said the mock turtle in a tone of the soute of the sabbit say in the door, and the white rabb",0,19,0.86,"(3, [""tort,'"", 'mock', 'turtle'])","(6, [""tort,'"", 'mock', 'turtle', 'soute', 'sabbit', 'rabb'])"
+22,"ur majesty must cross-examine this witness.'
 
-'i don't know what i have",0,20,0.95,6
-18,"owever, 'jury-men' would have done
-just as well.
+'well, if i must, i must,' the king said, with a melan",1,16,0.89,"(4, ['ur', 'majesty', 'i', 'i'])","(5, ['ur', 'majesty', 'i', 'i', 'melan'])"
+1022,"choly rolething toutle tound the had erown of the sabbit say in the door, and the pueen say down and",0,13,0.65,"(0, [])","(7, ['choly', 'rolething', 'toutle', 'tound', 'erown', 'sabbit', 'pueen'])"
+23,"splashed his way through the neighbouring pool--she
+could hear the rattle of the teacups as the marc",1,16,0.94,"(1, ['marc'])","(1, ['marc'])"
+1023,"h hare, and the white rabbit blowered about the words of the sabbit say in the door, and the white r",0,19,0.9,"(3, ['h', 'hare,', 'r'])","(5, ['h', 'hare,', 'blowered', 'sabbit', 'r'])"
+24,"deed:--
 
-the twelve jurors were all writing very busily on ",1,16,0.94,0
-1018,"the way of the sabbit say in the door, and the white rabbit blowered to she had got to see if he had",0,21,0.91,0
-19,"led out in a trembling voice to
-its children, 'come away, my dears! it's high time you were all in b",1,21,1.0,0
-1019,"r the mock turtle is deter the temescops of the way of the sabbit say in the door, and the white rab",0,20,0.91,5
-20," she did it so quickly
-that the poor little juror (it was bill, the lizard) could not make out
-at al",1,21,1.0,2
-1020,"l the rabbit say in the door, and the white rabbit blowered to her the had erowned to see if he had ",0,20,0.91,1
-21,"r skirt,
-upsetting all the jurymen on to the heads of the crowd below, and there
-they lay sprawling ",1,19,1.0,1
-1021,"the dancee in the door, and the white rabbit blowered about the words of the sabbit say in the door,",0,17,0.85,0
-22,"and--oh dear!' cried alice in a sorrowful
-tone, 'i'm afraid i've offended it again!' for the mouse w",1,17,0.94,4
-1022,"as seel a little thing was seeling to the crehess, and was so spok the words ouer as she was see as ",0,19,0.86,2
-23,"ly not becoming.
+  ''tis the voice of the lobster; i heard him declare,
+  ""you have baked me too brown, i mu",1,19,1.0,"(4, ['deed:--', 'i', 'i', 'mu'])","(4, ['deed:--', 'i', 'i', 'mu'])"
+1024,"st be!     i shat said to the preen.
+                                                               ",0,8,1.0,"(4, ['st', 'i', 'shat', 'preen.'])","(4, ['st', 'i', 'shat', 'preen.'])"
+25,"p to rest herself, and fanned herself with one of the
+leaves: 'i should have liked teaching it trick",1,19,1.0,"(3, ['p', ""'i"", 'trick'])","(3, ['p', ""'i"", 'trick'])"
+1025,", i shanl have you doun ueer the doomouse shan the door, and the mort of the way of the door of the ",0,18,0.78,"(3, ['i', 'shan', 'mort'])","(7, ['i', 'shanl', 'doun', 'ueer', 'doomouse', 'shan', 'mort'])"
+26,"nothing but the tops
+of the trees under which she had been wandering, when a sharp hiss made
+her dra",1,19,0.95,"(0, [])","(1, ['dra'])"
+1026,"amed to say the was sole foom the whole thing to eat the tabbit say in the door, and the white rabbi",0,19,0.86,"(2, ['sole', 'rabbi'])","(5, ['amed', 'sole', 'foom', 'tabbit', 'rabbi'])"
+27,"was just possible it had fallen into a
+cucumber-frame, or something of the sort.
 
-'and that's the jury-box,' thought alice, 'and those twelve creatures,'
-(she was o",1,15,0.94,3
-1023,"ot the pueen say the way of the way of the door of the thing sabbit, who was a long tay the way of t",0,23,0.92,3
-24,"xt to
-no toys to play with, and oh! ever so many lessons to learn! no, i've
-made up my mind about it",1,22,0.96,1
-1024,", i should lake the dance?    'you may with the reason in the semescope all the boowser '
+next came an angry",1,17,0.94,"(0, [])","(0, [])"
+1027," and ganden the danked of her hands, and she was going to see if he was seel a louse the thing sabbi",0,19,0.86,"(2, ['seel', 'louse'])","(5, ['ganden', 'danked', 'seel', 'louse', 'sabbi'])"
+28,"no mark; but he now hastily
+began again, using the ink, that was trickling down his face, as long as",1,20,1.0,"(0, [])","(0, [])"
+1028," the could she had poon uhe danee on the time, 
+'i don't know what i can't tee the dormouse say in t",0,20,0.91,"(6, ['poon', ""'i"", 'i', 'tee', 'dormouse', 't'])","(8, ['poon', 'uhe', 'danee', ""'i"", 'i', 'tee', 'dormouse', 't'])"
+29,"appearing on the
+work, you must comply either with the requirements of paragraphs 1.e.1
+through 1.e.",1,14,0.88,"(0, [])","(2, ['1.e.1', '1.e.'])"
+1029,9.  in the project gutenberg literary archive foundation are all fopyright in the project gutenberg ,0,11,0.73,"(5, ['project', 'literary', 'archive', 'foundation', 'project'])","(9, ['9.', 'project', 'gutenberg', 'literary', 'archive', 'foundation', 'fopyright', 'project', 'gutenberg'])"
+30,"the porpoise, ""keep back, please: we
+don't want you with us!""'
 
-'i dan't ",0,15,0.75,3
-25,"re a serpent; and there's no use
-denying it. i suppose you'll be telling me next that you never tast",1,18,0.9,2
-1025,"ed on the temee way of tersents and degl the things beain, and was going to be some time the white r",0,18,0.82,2
-26,"!' said five. 'i heard the queen say only
-yesterday you deserved to be beheaded!'
+'they were obliged to have him with ",1,18,1.0,"(0, [])","(0, [])"
+1030,"the words ' said the mock turtle in a tone of the soute of the sabbit say in the door, and the white",0,20,0.87,"(2, ['mock', 'turtle'])","(4, ['mock', 'turtle', 'soute', 'sabbit'])"
+31,"d the mouse to tell them something more.
 
-'what for?' said ",1,17,0.94,2
-1026,"the mock turtle, 
-'i dan't ree what a poor of the sable of the sea,   she said to herself, 'i don't ",0,20,0.95,6
-27,". 'but perhaps it was only sobbing,'
-she thought, and looked into its eyes again, to see if there we",1,19,0.95,0
-1027,re all cronued of the sabbit-s vell she say down and she was going to say it the larch hare and the ,0,20,0.91,4
-28,"-and the sneeze of the baby, the
-shriek of the gryphon, and all the other queer noises, would change",1,19,1.0,1
-1028," the daneee in the door, and the white rabbit blowered to she had good the tout of the sabbit say in",0,18,0.86,1
-29,"sending a
-written explanation to the person you received the work from.  if you
-received the work on",1,18,1.0,0
-1029, the project gutenberg literary archive foundation are all dopyright in the unrk or project gutenber,0,11,0.73,5
-30,"in particular. 'she'd soon fetch it back!'
+'you promised to tell me your history, you know,' said ali",1,18,0.95,"(1, ['d'])","(2, ['d', 'ali'])"
+1031,"ce in a tone of the soute of the sabbit saw in the door, and the white rabbit blowered to say the ta",0,20,0.87,"(2, ['ce', 'ta'])","(5, ['ce', 'soute', 'sabbit', 'blowered', 'ta'])"
+32,"sat still just as she left her, leaning her head on her
+hand, watching the setting sun, and thinking",1,19,1.0,"(0, [])","(0, [])"
+1032," off the had eeet in the door, and the white rabbit blowered to she had got to see if he had to see ",0,21,0.91,"(0, [])","(2, ['eeet', 'blowered'])"
+33,"bout as much right,' said the duchess, 'as pigs have to fly; and
+the m--'
 
-'and who is dinah, if i might venture to ask the questio",1,18,0.95,2
-1030,"n,' said the mouse, 'and the mort of the sable with the words '
+but here, to alice's grea",1,18,0.9,"(2, ['bout', 'duchess,'])","(4, ['bout', 'duchess,', ""alice's"", 'grea'])"
+1033,"t surping in the door, and the white rabbit blowered to herself at the coor had a little shanly were",0,16,0.8,"(1, ['t'])","(5, ['t', 'surping', 'blowered', 'coor', 'shanly'])"
+34,"ubt: only alice did not like to be told so. 'it's really
+dreadful,' she muttered to herself, 'the wa",1,18,0.95,"(2, ['alice', 'wa'])","(3, ['ubt:', 'alice', 'wa'])"
+1034,"y all the thme they were pleased to say in the door, and the white rabbit blowered about the words o",0,19,0.9,"(2, ['y', 'o'])","(4, ['y', 'thme', 'blowered', 'o'])"
+35,"ngs as i
+used--and i don't keep the same size for ten minutes together!'
 
-'i don't know what i have to be a l",0,23,0.96,6
-31,"p when i breathe""!'
+'can't remember what thing",1,16,0.89,"(2, ['i', 'i'])","(3, ['ngs', 'i', 'i'])"
+1035,s!' said the mock turtle in a tone of the soute of the sout of the sabbit say in the dares of her he,0,21,0.88,"(4, [""s!'"", 'mock', 'turtle', 'dares'])","(7, [""s!'"", 'mock', 'turtle', 'soute', 'sout', 'sabbit', 'dares'])"
+36,"r!' thought alice.
 
-'it is the same thing with you,' said the hatter, and here the
-conversation dro",1,18,0.95,2
-1031,"m the words was she was seer out of the was so see what say the sabbit say in the door, and she was ",0,23,0.96,1
-32,"worse. you must have meant some mischief, or else you'd have signed your
-name like an honest man.'
+one of the jurors had a pencil that squeaked. this of course, alice
+could not st",1,19,1.0,"(4, [""r!'"", 'alice.', 'alice', 'st'])","(4, [""r!'"", 'alice.', 'alice', 'st'])"
+1036,"ite forn the thme they were now and the was soeezing on the time, 
+'i don't know what i can't tee th",0,18,0.82,"(4, [""'i"", 'i', 'tee', 'th'])","(8, ['ite', 'forn', 'thme', 'soeezing', ""'i"", 'i', 'tee', 'th'])"
+37,"rpillar angrily, rearing
+itself upright as it spoke (it was exactly three inches high).
 
-",1,18,1.0,0
-1032,"'i don't know what i have to be a little birler,' she said to herself, 'i don't know what i can the ",0,22,1.0,5
-33,"her the blows hurt it or not.
+'but i'm no",1,16,0.94,"(1, [""i'm""])","(2, ['rpillar', ""i'm""])"
+1037,"t a moot of thing!' said the daterpillar.
 
-'oh, please mind what you're doing!' cried alice, jumping up and down",1,19,1.0,1
-1033, and alice sooe of the sobee to tay the way of the way of the dane with the words of her head a litt,0,21,0.88,3
-34,"ery seldom followed it),
-and sometimes she scolded herself so severely as to bring tears into
-her ey",1,17,0.94,1
-1034,"es with the soot of the sabbit say in the dares of her head a little sartering, and she was going to",0,20,0.91,3
-35,"ht she, 'what would become of me? they're dreadfully
-fond of beheading people here; the great wonder",1,17,1.0,1
-1035," is made of seered on the thmee sable as she could she was so spok the words tall, 
-'i don't know wh",0,19,0.86,4
-36,"dy looked at alice.
+'i don't know what i can't ree whth an any ratt!' said th",0,18,0.86,"(6, ['t', 'moot', ""'i"", 'i', 'ree', 'th'])","(9, ['t', 'moot', 'daterpillar.', ""'i"", 'i', 'ree', 'whth', ""ratt!'"", 'th'])"
+38,"ch the phrase ""project
+gutenberg"" is associated) is accessed, displayed, performed, viewed,
+copied o",1,13,0.93,"(3, ['ch', '""project', 'o'])","(4, ['ch', '""project', 'gutenberg""', 'o'])"
+1038,r dosm on the project gutenberg literary archive foundation are all copyright in the unrk or project,0,14,0.82,"(6, ['r', 'project', 'literary', 'archive', 'foundation', 'project'])","(9, ['r', 'dosm', 'project', 'gutenberg', 'literary', 'archive', 'foundation', 'unrk', 'project'])"
+39,"g that had a head could be
+beheaded, and that you weren't to talk nonsense.
 
-'i'm not a mile high,' said alice.
+the queen's argument wa",1,19,1.0,"(3, ['g', ""queen's"", 'wa'])","(3, ['g', ""queen's"", 'wa'])"
+1039,s the door of the way of the words was she was soeezing the was and doun of the sabbit say in the do,0,21,0.88,"(1, ['s'])","(4, ['s', 'soeezing', 'doun', 'sabbit'])"
+40,"e, feeling
+very glad that it was over at last: 'and i do so like that curious song
+about the whiting",1,21,1.0,"(2, ['e,', 'i'])","(2, ['e,', 'i'])"
+1040,"!'
 
-'you are,' said the king.
+'i don't know what i can't ree whth an any ray!' said the daterpillar.
 
-'nearly two mile",1,19,1.0,4
-1036,"s of the simg,' said the daterpillar.
+'i don't know what i can",0,18,0.86,"(6, [""'i"", 'i', 'ree', ""ray!'"", ""'i"", 'i'])","(8, [""'i"", 'i', 'ree', 'whth', ""ray!'"", 'daterpillar.', ""'i"", 'i'])"
+41,"t, and any volunteers associated with the production,
+promotion and distribution of project gutenber",1,13,0.93,"(2, ['t,', 'project'])","(3, ['t,', 'project', 'gutenber'])"
+1041,g-tm electronic works in a refund of the project gutenberg literary archive foundation are nonked an,0,13,0.81,"(4, ['project', 'literary', 'archive', 'foundation'])","(7, ['g-tm', 'project', 'gutenberg', 'literary', 'archive', 'foundation', 'nonked'])"
+42,"for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  you may copy ",1,18,1.0,"(0, [])","(0, [])"
+1042,it wou may cown the project gutenberg literary archive foundation are nonked and ansapient to projec,0,10,0.62,"(4, ['project', 'literary', 'archive', 'foundation'])","(10, ['wou', 'cown', 'project', 'gutenberg', 'literary', 'archive', 'foundation', 'nonked', 'ansapient', 'projec'])"
+43,"g
+to find her way out. 'i shall be punished for it now, i suppose, by
+being drowned in my own tears!",1,22,1.0,"(3, ['g', ""'i"", 'i'])","(3, ['g', ""'i"", 'i'])"
+1043," iow she was ao loog at the door, and the mort of the sabbit was not a moment to say whine she was g",0,21,0.88,"(4, ['ao', 'mort', 'whine', 'g'])","(7, ['iow', 'ao', 'loog', 'mort', 'sabbit', 'whine', 'g'])"
+44,"t on, very much pleased at having found out a new kind of
+rule, 'and vinegar that makes them sour--a",1,19,0.95,"(1, ['t'])","(2, ['t', 'sour--a'])"
+1044,"nd i dan the doomouse say in the door, and the mort of the say of the mock turtle in the door, and t",0,23,0.96,"(7, ['nd', 'i', 'dan', 'mort', 'mock', 'turtle', 't'])","(8, ['nd', 'i', 'dan', 'doomouse', 'mort', 'mock', 'turtle', 't'])"
+45,"she next peeped out the
+fish-footman was gone, and the other was sitting on the ground near the
+door",1,18,0.95,"(0, [])","(1, ['fish-footman'])"
+1045,", and the white rabbit blowered to she had got to see if he had to see if he was the poor little thi",0,21,0.88,"(0, [])","(2, ['blowered', 'thi'])"
+46,"had to double themselves
+up and to stand on their hands and feet, to make the arches.
 
-'i don't know what i can't ree whth an any ratt!' said the mo",0,17,0.81,5
-37,"o or distributing project gutenberg-tm electronic works provided
-that
+the chief dif",1,20,1.0,"(1, ['dif'])","(1, ['dif'])"
+1046,"n on the thme they were now and the was soeezing on the time, 
+'i don't know what i can't tee the do",0,21,0.91,"(4, ['n', ""'i"", 'i', 'tee'])","(6, ['n', 'thme', 'soeezing', ""'i"", 'i', 'tee'])"
+47," off a little of her knowledge. 'just think of
+what work it would make with the day and night! you s",1,21,1.0,"(1, ['s'])","(1, ['s'])"
+1047,"ee, alice taid to herself, i should think it was she had geet that she was see as the door of the wa",0,22,0.96,"(5, ['ee,', 'alice', 'i', 'geet', 'wa'])","(6, ['ee,', 'alice', 'taid', 'i', 'geet', 'wa'])"
+48,"ilure. alice heard it say to itself 'then i'll
+go round and get in at the window.'
 
-- you pay a royalty fee of 20",1,14,0.82,2
-1037,% information of the project gutenberg literary archive foundation are all dopyright in the uery col,0,12,0.75,5
-38,"n it wasn't very civil of you to offer it,' said alice angrily.
+'that you won't'",1,19,0.95,"(1, ['alice'])","(2, ['ilure.', 'alice'])"
+1048," whete were the rememcer was alowhered to the prher size ' 
+'i don't know what i have to be a little",0,16,0.76,"(2, [""'i"", 'i'])","(6, ['whete', 'rememcer', 'alowhered', 'prher', ""'i"", 'i'])"
+49,"arply and very angrily.
 
-'it wasn't very civil of you to sit",1,21,1.0,2
-1038,"hecl the rememcer of the semescop, it was the mittle door,   she was not a mouse and she was soon li",0,18,0.86,2
-39,"      (with alice's love).
-
-oh dear, what nonsense i'm talking!'
-
-just then her head struck against ",1,14,0.93,1
-1039,"the had erowded to say the sabbit say in the door, and the white rabbit blowered to herself at the c",0,18,0.86,0
-40,"orld would go round a deal faster than it does.'
-
-'which would not be an advantage,' said alice, who",1,18,0.95,1
-1040," was a louse of the sabbit say in the door, and the pueen say down and said, 'it was the mock turtle",0,20,0.91,3
-41,"d so, very carefully, with one foot.
-
-'get up!' said the queen, in a shrill, loud voice, and the thr",1,19,0.95,2
-1041,"ee gardeners intart for to sele the had euen whth the words ouer the was soeezing on the time, 
-'i d",0,16,0.76,4
-42,"er, while more and more faintly
-came, carried on the breeze that followed them, the melancholy words",1,17,1.0,1
-1042," as she was so speak again, 
-'i don't know what i have to be a little birler,' she said to herself, ",0,21,1.0,3
-43,"ould remember about ravens and writing-desks,
-which wasn't much.
-
-the hatter was the first to break ",1,14,0.88,0
-1043,"the daneee in the door, and the white rabbit blowered to she had got to see if he had to see if he w",0,22,0.92,1
-44,"'s generally a frog or a worm. the question is, what did the
-archbishop find?'
-
-the mouse did not no",1,20,1.0,1
-1044,"t a boot, and she was soeekny and said, 'i don't know what i can teil to her the dookouse. 
-
-'you ma",0,20,0.91,5
-45,"repeated their arguments to her, though, as they
-all spoke at once, she found it very hard indeed to",1,19,1.0,0
-1045," see it again, 
-'i don't know what i have to be a little birler,' she said to herself, 'i don't know",0,21,1.0,4
-46,"ey're not,' said the white rabbit, 'and that's the queerest thing
-about it.' (the jury all looked pu",1,18,1.0,2
-1046,"zzled to the thing, 
-'when i can't ree what i have tome mine the danee?                             ",0,13,0.87,4
-47,"d trademark.  project
-gutenberg is a registered trademark, and may not be used if you
-charge for the",1,17,0.94,2
-1047, project gutenberg literary archive foundation ar so dompent to the project gutenberg literary archi,0,10,0.71,7
-48,"go by the carrier,' she thought; 'and how funny it'll seem, sending
-presents to one's own feet! and ",1,18,1.0,0
-1048,"weat it the doomouse shanl tell you a long tale to the table, 
-'iow don't mnnk at a curious ' said t",0,16,0.73,1
-49,"tements concerning tax treatment of donations received from
-outside the united states.  u.s. laws al",1,14,0.93,2
-1049,o of the project gutenberg literary archive foundation are all fopyright in the project gutenberg li,0,13,0.81,7
+'a knot!' said alice, always ready to make herself useful, and looking
+anxi",1,15,0.88,"(1, ['alice,'])","(3, ['arply', 'alice,', 'anxi'])"
+1049,"ously anxiously about and saying the door of the thing sabbit, who was a long tay the way of the way",0,19,0.9,"(1, ['tay'])","(3, ['ously', 'sabbit,', 'tay'])"

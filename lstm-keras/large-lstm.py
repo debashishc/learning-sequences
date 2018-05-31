@@ -124,7 +124,7 @@ for ix in range(NUM_GENERATED):
 			if remove_punc(word) not in data and remove_punc(word) in all_words:
 				correct.append(word)
 				counter += 1
-		return counter
+		return counter, correct
 	
 	def num_novel_all(sentence, train_text_file):
 		counter = 0
@@ -136,7 +136,7 @@ for ix in range(NUM_GENERATED):
 			if remove_punc(word) not in data:
 				correct.append(word)
 				counter += 1
-		return counter
+		return counter, correct
 
 
 	WORDS_FILENAME = 'words_alpha.txt'
@@ -151,12 +151,12 @@ for ix in range(NUM_GENERATED):
 import csv
 
 # create csv file for text and score for human(1) or machine(0) generated
-fieldnames = ['index', 'text', 'score','correct spelling','percent','novel word count']
+fieldnames = ['index', 'text', 'score','correct spelling','percent','novel word spelled', 'novel words']
 with open('text_scores_new.csv', 'w', newline='') as csvfile:
 	writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 	writer.writeheader()
 	data = [dict(zip(fieldnames, [k, v[0], v[1], num_spell_correctly(v[0], WORDS_FILENAME), 
-		round((num_spell_correctly(v[0], WORDS_FILENAME)/len(v[0].split())),2), num_novel(v[0], WORDS_FILENAME, TRAIN_FILE)]))
+                               round((num_spell_correctly(v[0], WORDS_FILENAME)/len(v[0].split())), 2), num_novel(v[0], WORDS_FILENAME, TRAIN_FILE), num_novel_all(v[0], TRAIN_FILE)]))
          for k, v in text_dict.items()]
 	writer.writerows(data)
 
