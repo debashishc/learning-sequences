@@ -10,6 +10,13 @@ from keras.layers import LSTM
 from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
 
+NUM_GENERATED = 100
+
+# find frequency of short words
+import string
+def remove_punc(sentence):
+	return "".join(char for char in sentence if char not in string.punctuation)
+
 # load ascii text and covert to lowercase
 filename = "input/alice-in-wonderland.txt"
 raw_text = open(filename).read()
@@ -64,7 +71,7 @@ model.load_weights(filename)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 text_dict = dict()
-for ix in range(100):
+for ix in range(NUM_GENERATED):
 	if ix%10 == 0:
 		print('Iteration: ', ix)
 
@@ -99,7 +106,7 @@ for ix in range(100):
 			data = _file.read().split('\n')
 		# print("SENTENCE: ", sentence)
 		for word in sentence.split():
-			if word in data:
+			if remove_punc(word) in data:
 				correct.append(word)
 				counter += 1
 		return counter
@@ -125,5 +132,7 @@ with open('text_scores_new.csv', 'w', newline='') as csvfile:
 		round((num_spell_correctly(v[0], WORDS_FILENAME)/len(v[0].split())),2)]))
          for k, v in text_dict.items()]
 	writer.writerows(data)
+
+
 
 

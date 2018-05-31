@@ -7,6 +7,7 @@
 	- 
 - extrapolate (change size of dataset)
 	- changing size of data increases epoch time proportionally
+		- doubling the data appx. doubles the time
 	- changing units increases exponentially
 		- 256 -> 512 increases training time from ~17 to ~53 mins
 - measuring novelty of the text (edit-distance)
