@@ -64,16 +64,16 @@ model.load_weights(filename)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 text_dict = dict()
-for ix in range(10):
+for ix in range(100):
 	if ix%10 == 0:
 		print('Iteration: ', ix)
 
 	# pick a random seed
 	start = numpy.random.randint(0, len(dataX)-1)
 	pattern = dataX[start]
-	print ("Seed text:")
+	# print ("Seed text:")
 	seed_text = ''.join([int_to_char[value] for value in pattern])
-	print ("\"", seed_text, "\"")
+	# print ("\"", seed_text, "\"")
 
 	# generate characters
 	generated_text = ''
@@ -88,8 +88,8 @@ for ix in range(10):
 		seq_in = [int_to_char[value] for value in pattern]
 		pattern.append(index)
 		pattern = pattern[1:len(pattern)]
-	print("\nGenerated text: \n", generated_text)
-	print ("\nDone.")
+	# print("\nGenerated text: \n", generated_text)
+	# print ("\nDone.")
 
 
 	def num_spell_correctly(sentence, word_file):
@@ -97,7 +97,7 @@ for ix in range(10):
 		correct = list()
 		with open(word_file, 'r') as _file:
 			data = _file.read().split('\n')
-		print("SENTENCE: ", sentence)
+		# print("SENTENCE: ", sentence)
 		for word in sentence.split():
 			if word in data:
 				correct.append(word)
@@ -107,7 +107,7 @@ for ix in range(10):
 
 	WORDS_FILENAME = 'words_alpha.txt'
 
-	print(num_spell_correctly(generated_text, WORDS_FILENAME))
+	# print(num_spell_correctly(generated_text, WORDS_FILENAME))
 
 	text_dict[ix] = (seed_text, 1)
 	text_dict[ix+1000] = (generated_text, 0)
@@ -121,9 +121,9 @@ fieldnames = ['index', 'text', 'score','correct spelling','percent']
 with open('text_scores_new.csv', 'w', newline='') as csvfile:
 	writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 	writer.writeheader()
-	data = [dict(zip(fieldnames, [k, v[0], v[1], num_spell_correctly(v[0], WORDS_FILENAME), (num_spell_correctly(v[0], WORDS_FILENAME)/len(v[0].split()))]))
+	data = [dict(zip(fieldnames, [k, v[0], v[1], num_spell_correctly(v[0], WORDS_FILENAME), 
+		round((num_spell_correctly(v[0], WORDS_FILENAME)/len(v[0].split())),2)]))
          for k, v in text_dict.items()]
-	print(data)
 	writer.writerows(data)
 
 
