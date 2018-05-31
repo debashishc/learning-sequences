@@ -11,7 +11,7 @@ from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
 
 # load ascii text and covert to lowercase
-filename = "colombiano.txt"
+filename = "input/alice-in-wonderland.txt"
 raw_text = open(filename).read()
 raw_text = raw_text.lower()
 
@@ -59,49 +59,71 @@ model.add(Dense(y.shape[1], activation='softmax'))
 # load the network weights
 # weights_folder = "large-lstm-weights/"
 weights_folder = ""
-filename = weights_folder + "weights-improvement-17-1.5762-bigger.hdf5"
+filename = weights_folder + "weights-improvement-39-1.3837-bigger.hdf5"
 model.load_weights(filename)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 text_dict = dict()
-# for ix in range(500):
-# 	if ix%10 == 0:
-# 		print('Iteration: ', ix)
+for ix in range(10):
+	if ix%10 == 0:
+		print('Iteration: ', ix)
 
-# pick a random seed
-start = numpy.random.randint(0, len(dataX)-1)
-pattern = dataX[start]
-print ("Seed text:")
-seed_text = ''.join([int_to_char[value] for value in pattern])
-print ("\"", seed_text, "\"")
+	# pick a random seed
+	start = numpy.random.randint(0, len(dataX)-1)
+	pattern = dataX[start]
+	print ("Seed text:")
+	seed_text = ''.join([int_to_char[value] for value in pattern])
+	print ("\"", seed_text, "\"")
 
-# generate characters
-generated_text = ''
+	# generate characters
+	generated_text = ''
 
-for i in range(1000):
-	x = numpy.reshape(pattern, (1, len(pattern), 1))
-	x = x / float(n_vocab)
-	prediction = model.predict(x, verbose=0.6)
-	index = numpy.argmax(prediction)
-	result = int_to_char[index]
-	generated_text += result
-	seq_in = [int_to_char[value] for value in pattern]
-	pattern.append(index)
-	pattern = pattern[1:len(pattern)]
-print("\nGenerated text: \n", generated_text)
-print ("\nDone.")
+	for i in range(100):
+		x = numpy.reshape(pattern, (1, len(pattern), 1))
+		x = x / float(n_vocab)
+		prediction = model.predict(x, verbose=0.6)
+		index = numpy.argmax(prediction)
+		result = int_to_char[index]
+		generated_text += result
+		seq_in = [int_to_char[value] for value in pattern]
+		pattern.append(index)
+		pattern = pattern[1:len(pattern)]
+	print("\nGenerated text: \n", generated_text)
+	print ("\nDone.")
 
-# text_dict[ix] = (seed_text, 1)
-# text_dict[ix+1000] = (generated_text, 0)
 
-# print(text_dict)
+	def num_spell_correctly(sentence, word_file):
+		counter = 0
+		correct = list()
+		with open(word_file, 'r') as _file:
+			data = _file.read().split('\n')
+		print("SENTENCE: ", sentence)
+		for word in sentence.split():
+			if word in data:
+				correct.append(word)
+				counter += 1
+		return counter
+
+
+	WORDS_FILENAME = 'words_alpha.txt'
+
+	print(num_spell_correctly(generated_text, WORDS_FILENAME))
+
+	text_dict[ix] = (seed_text, 1)
+	text_dict[ix+1000] = (generated_text, 0)
+
+	# print(text_dict)
 
 import csv
 
 # create csv file for text and score for human(1) or machine(0) generated
-# fieldnames = ['index', 'text', 'score']
-# with open('text_scores.csv', 'w', newline='') as csvfile:
-# 	writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-# 	writer.writeheader()
-# 	data = [dict(zip(fieldnames, [k, v[0], v[1]])) for k, v in text_dict.items()]
-# 	writer.writerows(data)
+fieldnames = ['index', 'text', 'score','correct spelling','percent']
+with open('text_scores_new.csv', 'w', newline='') as csvfile:
+	writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+	writer.writeheader()
+	data = [dict(zip(fieldnames, [k, v[0], v[1], num_spell_correctly(v[0], WORDS_FILENAME), (num_spell_correctly(v[0], WORDS_FILENAME)/len(v[0].split()))]))
+         for k, v in text_dict.items()]
+	print(data)
+	writer.writerows(data)
+
+
