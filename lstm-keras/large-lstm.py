@@ -10,7 +10,8 @@ from keras.layers import LSTM
 from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
 
-NUM_GENERATED = 100
+NUM_GENERATED = 50
+print("********************* GENERATING ", NUM_GENERATED, " SENTENCES ********************* ")
 
 # find frequency of short words
 import string
@@ -18,8 +19,8 @@ def remove_punc(sentence):
 	return "".join(char for char in sentence if char not in string.punctuation)
 
 # load ascii text and covert to lowercase
-filename = "input/alice-in-wonderland.txt"
-raw_text = open(filename).read()
+TRAIN_FILE = "input/alice-in-wonderland.txt"
+raw_text = open(TRAIN_FILE).read()
 raw_text = raw_text.lower()
 
 # create mapping of unique chars to integers, and a reverse mapping
@@ -73,7 +74,7 @@ model.compile(loss='categorical_crossentropy', optimizer='adam')
 text_dict = dict()
 for ix in range(NUM_GENERATED):
 	if ix%10 == 0:
-		print('Iteration: ', ix)
+		print('Generation: ', ix)
 
 	# pick a random seed
 	start = numpy.random.randint(0, len(dataX)-1)
@@ -111,6 +112,32 @@ for ix in range(NUM_GENERATED):
 				counter += 1
 		return counter
 
+	def num_novel(sentence, word_file, train_text_file):
+		counter = 0
+		correct = list()
+		with open(train_text_file, 'r') as _file, open(word_file, 'r') as _words:
+			data = _file.read().split()
+			data = [remove_punc(word) for word in data]
+			all_words = _words.read().split('\n')
+		# print("SENTENCE: ", sentence)
+		for word in sentence.split():
+			if remove_punc(word) not in data and remove_punc(word) in all_words:
+				correct.append(word)
+				counter += 1
+		return counter
+	
+	def num_novel_all(sentence, train_text_file):
+		counter = 0
+		correct = list()
+		with open(train_text_file, 'r') as _file:
+			data = _file.read().split()
+			data = [remove_punc(word) for word in data]
+		for word in sentence.split():
+			if remove_punc(word) not in data:
+				correct.append(word)
+				counter += 1
+		return counter
+
 
 	WORDS_FILENAME = 'words_alpha.txt'
 
@@ -124,12 +151,12 @@ for ix in range(NUM_GENERATED):
 import csv
 
 # create csv file for text and score for human(1) or machine(0) generated
-fieldnames = ['index', 'text', 'score','correct spelling','percent']
+fieldnames = ['index', 'text', 'score','correct spelling','percent','novel word count']
 with open('text_scores_new.csv', 'w', newline='') as csvfile:
 	writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 	writer.writeheader()
 	data = [dict(zip(fieldnames, [k, v[0], v[1], num_spell_correctly(v[0], WORDS_FILENAME), 
-		round((num_spell_correctly(v[0], WORDS_FILENAME)/len(v[0].split())),2)]))
+		round((num_spell_correctly(v[0], WORDS_FILENAME)/len(v[0].split())),2), num_novel(v[0], WORDS_FILENAME, TRAIN_FILE)]))
          for k, v in text_dict.items()]
 	writer.writerows(data)
 
