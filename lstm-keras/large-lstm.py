@@ -3,6 +3,7 @@
 from __future__ import print_function
 import sys
 import numpy
+import csv
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import Dropout
@@ -10,12 +11,17 @@ from keras.layers import LSTM
 from keras.callbacks import ModelCheckpoint
 from keras.utils import np_utils
 
-NUM_GENERATED = 50
+# for bigrams
+from collections import Counter, defaultdict
+from itertools import tee
+from count_bigrams import pairwise, bigrams
+
+NUM_GENERATED = 50 # number of sequences to be generated
 print("********************* GENERATING ", NUM_GENERATED, " SENTENCES ********************* ")
 
-# find frequency of short words
 import string
 def remove_punc(sentence):
+	"""Remove punctuations from a given sentence """
 	return "".join(char for char in sentence if char not in string.punctuation)
 
 # load ascii text and covert to lowercase
@@ -86,10 +92,10 @@ for ix in range(NUM_GENERATED):
 	# generate characters
 	generated_text = ''
 
-	for i in range(100):
+	for i in range(300):
 		x = numpy.reshape(pattern, (1, len(pattern), 1))
 		x = x / float(n_vocab)
-		prediction = model.predict(x, verbose=0.6)
+		prediction = model.predict(x, verbose=0)
 		index = numpy.argmax(prediction)
 		result = int_to_char[index]
 		generated_text += result
@@ -146,20 +152,19 @@ for ix in range(NUM_GENERATED):
 	text_dict[ix] = (seed_text, 1)
 	text_dict[ix+1000] = (generated_text, 0)
 
-	# print(text_dict)
-
-import csv
 
 # create csv file for text and score for human(1) or machine(0) generated
-fieldnames = ['index', 'text', 'score','correct spelling','percent','novel word spelled', 'novel words']
+fieldnames = ['index', 'text', 'score','correct spelling','percent','novel word spelled', 'novel words', 'bigrams']
 with open('text_scores_new.csv', 'w', newline='') as csvfile:
 	writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 	writer.writeheader()
 	data = [dict(zip(fieldnames, [k, v[0], v[1], num_spell_correctly(v[0], WORDS_FILENAME), 
-                               round((num_spell_correctly(v[0], WORDS_FILENAME)/len(v[0].split())), 2), num_novel(v[0], WORDS_FILENAME, TRAIN_FILE), num_novel_all(v[0], TRAIN_FILE)]))
+                               round((num_spell_correctly(v[0], WORDS_FILENAME)/len(v[0].split())), 2), 
+							   num_novel(v[0], WORDS_FILENAME, TRAIN_FILE), num_novel_all(v[0], TRAIN_FILE), bigrams(v[0])]))
          for k, v in text_dict.items()]
 	writer.writerows(data)
 
 
 
-
+if __name__ == '__main__':
+	pass
