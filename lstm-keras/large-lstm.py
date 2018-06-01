@@ -17,7 +17,7 @@ from itertools import tee
 from count_bigrams import pairwise, bigrams
 
 NUM_GENERATED = 50 # number of sequences to be generated
-print("********************* GENERATING ", NUM_GENERATED, " SENTENCES ********************* ")
+print("\n********************* GENERATING ", NUM_GENERATED, " SENTENCES *********************\n")
 
 import string
 def remove_punc(sentence):
@@ -25,9 +25,17 @@ def remove_punc(sentence):
 	return "".join(char for char in sentence if char not in string.punctuation)
 
 # load ascii text and covert to lowercase
-TRAIN_FILE = "input/alice-in-wonderland.txt"
+TRAIN_FILE = 'input/colombiano.txt'
+# TRAIN_FILE = "input/alice-in-wonderland.txt"
 raw_text = open(TRAIN_FILE).read()
 raw_text = raw_text.lower()
+
+# load the network weights
+# weights_folder = "large-lstm-weights/" # english
+weights_folder = "spanish-weights-bigger/" #spanish
+
+# WEIGHT = "weights-improvement-39-1.3837-bigger.hdf5" # english
+WEIGHT = "weights-improvement-17-1.5762-bigger.hdf5" # spanish
 
 # create mapping of unique chars to integers, and a reverse mapping
 chars = sorted(list(set(raw_text)))
@@ -70,10 +78,8 @@ model.add(LSTM(256))
 model.add(Dropout(0.2))
 model.add(Dense(y.shape[1], activation='softmax'))
 
-# load the network weights
-# weights_folder = "large-lstm-weights/"
-weights_folder = ""
-filename = weights_folder + "weights-improvement-39-1.3837-bigger.hdf5"
+
+filename = weights_folder + WEIGHT
 model.load_weights(filename)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
@@ -85,9 +91,9 @@ for ix in range(NUM_GENERATED):
 	# pick a random seed
 	start = numpy.random.randint(0, len(dataX)-1)
 	pattern = dataX[start]
-	# print ("Seed text:")
+	print ("Seed text:")
 	seed_text = ''.join([int_to_char[value] for value in pattern])
-	# print ("\"", seed_text, "\"")
+	print ("\"", seed_text, "\"")
 
 	# generate characters
 	generated_text = ''
@@ -102,8 +108,8 @@ for ix in range(NUM_GENERATED):
 		seq_in = [int_to_char[value] for value in pattern]
 		pattern.append(index)
 		pattern = pattern[1:len(pattern)]
-	# print("\nGenerated text: \n", generated_text)
-	# print ("\nDone.")
+	print("\nGenerated text: \n", generated_text)
+	print ("\nDone.")
 
 
 	def num_spell_correctly(sentence, word_file):
@@ -153,16 +159,16 @@ for ix in range(NUM_GENERATED):
 	text_dict[ix+1000] = (generated_text, 0)
 
 
-# create csv file for text and score for human(1) or machine(0) generated
-fieldnames = ['index', 'text', 'score','correct spelling','percent','novel word spelled', 'novel words', 'bigrams']
-with open('text_scores_new.csv', 'w', newline='') as csvfile:
-	writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-	writer.writeheader()
-	data = [dict(zip(fieldnames, [k, v[0], v[1], num_spell_correctly(v[0], WORDS_FILENAME), 
-                               round((num_spell_correctly(v[0], WORDS_FILENAME)/len(v[0].split())), 2), 
-							   num_novel(v[0], WORDS_FILENAME, TRAIN_FILE), num_novel_all(v[0], TRAIN_FILE), bigrams(v[0])]))
-         for k, v in text_dict.items()]
-	writer.writerows(data)
+# # create csv file for text and score for human(1) or machine(0) generated
+# fieldnames = ['index', 'text', 'score','correct spelling','percent','novel word spelled', 'novel words', 'bigrams']
+# with open('text_scores_new.csv', 'w', newline='') as csvfile:
+# 	writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+# 	writer.writeheader()
+# 	data = [dict(zip(fieldnames, [k, v[0], v[1], num_spell_correctly(v[0], WORDS_FILENAME), 
+#                                round((num_spell_correctly(v[0], WORDS_FILENAME)/len(v[0].split())), 2), 
+# 							   num_novel(v[0], WORDS_FILENAME, TRAIN_FILE), num_novel_all(v[0], TRAIN_FILE), bigrams(v[0])]))
+#          for k, v in text_dict.items()]
+# 	writer.writerows(data)
 
 
 

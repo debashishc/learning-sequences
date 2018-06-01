@@ -69,7 +69,7 @@ def encode_sequence():
 	model = Sequential()
 
 	# parameters
-	NUM_HIDDEN_UNITS = 256
+	NUM_HIDDEN_UNITS = 512
 	ACTIVATION = 'softmax'
 	LOSS = 'categorical_crossentropy'
 	OPTMIZER = 'adam'
@@ -117,6 +117,6 @@ if __name__ == '__main__':
 	alice="input/"+'alice-in-wonderland.txt'
 	colombiano="input/"+'colombiano.txt'
 
-	filename = colombiano
+	filename = alice
 
 	encode_sequence()
