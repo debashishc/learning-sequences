@@ -25,17 +25,19 @@ def remove_punc(sentence):
 	return "".join(char for char in sentence if char not in string.punctuation)
 
 # load ascii text and covert to lowercase
-TRAIN_FILE = 'input/colombiano.txt'
-# TRAIN_FILE = "input/alice-in-wonderland.txt"
+# TRAIN_FILE = 'input/colombiano.txt'
+TRAIN_FILE = "input/alice-in-wonderland.txt"
 raw_text = open(TRAIN_FILE).read()
 raw_text = raw_text.lower()
 
 # load the network weights
+weights_folder = ""
 # weights_folder = "large-lstm-weights/" # english
-weights_folder = "spanish-weights-bigger/" #spanish
+# weights_folder = "spanish-weights-bigger/" #spanish
 
 # WEIGHT = "weights-improvement-39-1.3837-bigger.hdf5" # english
-WEIGHT = "weights-improvement-17-1.5762-bigger.hdf5" # spanish
+WEIGHT = "weights-improvement-20-0.9309-bigger.hdf5" # 512 unit LSTM
+# WEIGHT = "weights-improvement-17-1.5762-bigger.hdf5" # spanish
 
 # create mapping of unique chars to integers, and a reverse mapping
 chars = sorted(list(set(raw_text)))
@@ -72,15 +74,15 @@ y = np_utils.to_categorical(dataY)
 
 # define the LSTM model
 model = Sequential()
-model.add(LSTM(256, input_shape=(X.shape[1], X.shape[2]), return_sequences=True))
+model.add(LSTM(512, input_shape=(X.shape[1], X.shape[2]), return_sequences=True))
 model.add(Dropout(0.2))
-model.add(LSTM(256))
+model.add(LSTM(512))
 model.add(Dropout(0.2))
 model.add(Dense(y.shape[1], activation='softmax'))
 
 
-filename = weights_folder + WEIGHT
-model.load_weights(filename)
+weights_file = weights_folder + WEIGHT
+model.load_weights(weights_file)
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 text_dict = dict()
