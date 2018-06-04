@@ -16,7 +16,7 @@ from collections import Counter, defaultdict
 from itertools import tee
 from count_bigrams import pairwise, bigrams
 
-NUM_GENERATED = 50 # number of sequences to be generated
+NUM_GENERATED = 5 # number of sequences to be generated
 print("\n********************* GENERATING ", NUM_GENERATED, " SENTENCES *********************\n")
 
 import string

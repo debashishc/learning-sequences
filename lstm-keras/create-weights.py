@@ -69,11 +69,12 @@ def encode_sequence():
 	model = Sequential()
 
 	# parameters
-	NUM_HIDDEN_UNITS = 512
+	NUM_HIDDEN_UNITS = 256
 	ACTIVATION = 'softmax'
 	LOSS = 'categorical_crossentropy'
 	OPTMIZER = 'adam'
-	NUM_EPOCHS = 20
+	NUM_EPOCHS = 30
+	DROPOUT=0.2
 
 
 	print(X.shape, y.shape)
@@ -82,7 +83,7 @@ def encode_sequence():
 
 	if model_size.lower() == 's':
 		model.add(LSTM(NUM_HIDDEN_UNITS, input_shape=(X.shape[1], X.shape[2])))
-		model.add(Dropout(0.2))
+		model.add(Dropout(DROPOUT))
 		model.add(Dense(y.shape[1], activation=ACTIVATION))
 		model.compile(loss=LOSS, optimizer=OPTMIZER)
 
@@ -97,14 +98,14 @@ def encode_sequence():
 	else:
 		model.add(LSTM(NUM_HIDDEN_UNITS, input_shape=(
 			X.shape[1], X.shape[2]), return_sequences=True))
-		model.add(Dropout(0.2))
+		model.add(Dropout(DROPOUT))
 		model.add(LSTM(NUM_HIDDEN_UNITS))
-		model.add(Dropout(0.2))
+		model.add(Dropout(DROPOUT))
 		model.add(Dense(y.shape[1], activation=ACTIVATION))
 		model.compile(loss=LOSS, optimizer=OPTMIZER)
 
 		# define the checkpoint
-		filepath="weights-improvement-{epoch:02d}-{loss:.4f}-bigger.hdf5"
+		filepath="weights-ulysses-{epoch:02d}-{loss:.4f}-512.hdf5"
 		checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
 		callbacks_list = [checkpoint]
 
@@ -116,7 +117,8 @@ if __name__ == '__main__':
 
 	alice="input/"+'alice-in-wonderland.txt'
 	colombiano="input/"+'colombiano.txt'
+	ulysses = "input/ulysses.txt"
 
-	filename = alice
+	filename = ulysses
 
 	encode_sequence()
